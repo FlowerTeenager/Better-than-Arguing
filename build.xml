@@ -110,7 +110,7 @@
 		</unzip>
 		
 		<copy todir="${commonsrc.dir}">
-			<fileset dir="${download.dir}/shedar-modstats-${modstat.filename}"/>
+			<fileset dir="${download.dir}/calclavia-modstats-${modstat.filename}"/>
 		</copy>
 		
 		<echo message="Copied ModStat files"/>
