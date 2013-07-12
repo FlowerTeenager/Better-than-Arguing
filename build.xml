@@ -133,10 +133,10 @@
 		<!-- Copies this mods source and resources! -->
 		
 		<!-- Delete source in build space -->
-		<delete dir="${commonsrc.dir}/mods/FlowerTeenager/BetterThanArguing"/>
+		<delete dir="${commonsrc.dir}/FlowerTeenager/BetterThanArguing"/>
 		
 		<!-- Delete resources in build space -->
-		<delete dir="${commonsrc.dir}/mods/FlowerTeenager/BetterThanArguing"/>
+		<delete dir="${commonsrc.dir}/FlowerTeenager/BetterThanArguing"/>
 		<delete file="${commonsrc.dir}/mcmod.info"/>
 
 		<!-- Copy source -->
@@ -201,8 +201,8 @@
 	<target name="copy-new-code">
 		<!-- Takes the new code from the build envrironment, most likely made with Eclipse and puts it in the main source directory -->
 		<delete dir="${src.dir}"/>
-		<copy todir="${src.dir}/mods/FlowerTeenager/BetterThanArguing">
-			<fileset dir="${commonsrc.dir}/mods/FlowerTeenager/BetterThanArguing"/>
+		<copy todir="${src.dir}/FlowerTeenager/BetterThanArguing">
+			<fileset dir="${commonsrc.dir}/FlowerTeenager/BetterThanArguing"/>
 		</copy>
 	</target>
 
