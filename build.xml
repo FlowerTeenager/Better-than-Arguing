@@ -26,7 +26,7 @@
 	<property name="forge.version" value="9.10.0.789"/>
 	<property name="mod.version" value="0"/>
 	
-	<property name="modstat.filename" value="8f8fd43d360f"/>
+	<property name="modstat.filename" value="mc-161-update-1373212101138"/>
   
 	<!-- Let's make ant make work with git ;) -->
 	<macrodef name = "git">
@@ -67,7 +67,7 @@
 	<target name="download">
 		<mkdir dir="${download.dir}"/>
 		<get src="http://files.minecraftforge.net/minecraftforge/minecraftforge-src-${mc.version}-${forge.version}.zip" dest="${download.dir}" usetimestamp="True"/>
-		<get src="https://bitbucket.org/calclavia/modstats/get/${modstat.filename}.zip" dest="${download.dir}" usetimestamp="True"/>
+		<get src="https://bitbucket.org/calclavia/modstats/get/calclavia/{$modstat.filename}.zip" dest="${download.dir}" usetimestamp="True"/>
 
 		<echo message="Download finished"/>
 	</target>
