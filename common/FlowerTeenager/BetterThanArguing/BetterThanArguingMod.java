@@ -25,6 +25,19 @@ public class BetterThanArguingMod {
 	public static final String AoW6 = AoW + " Tier 6: Pottery";
 	public static final String NA = "The New Age";
 	
+	//Better than Wolves Age Booleans
+	public static boolean AoVEnabled;
+	public static boolean AoW1Enabled;
+	public static boolean AoW2Enabled;
+	public static boolean AoW3Enabled;
+	public static boolean AoW4Enabled;
+	public static boolean AoW5Enabled;
+	public static boolean AoW6Enabled;
+	public static boolean NAEnabled;
+	
+	//Configuration Categories
+	public static final String AgeBoolean = "Ages Enabled";
+	
 	@EventHandler
 	public void PreInit (FMLPreInitializationEvent event)
 	{
@@ -32,6 +45,14 @@ public class BetterThanArguingMod {
         try
         {
             cfg.load();
+            AoVEnabled = cfg.get(AgeBoolean, AoV + " Enabled", true).getBoolean(true);
+            AoW1Enabled = cfg.get(AgeBoolean, AoW1 + " Enabled", true).getBoolean(true);
+            AoW2Enabled = cfg.get(AgeBoolean, AoW2 + " Enabled", true).getBoolean(true);
+            AoW3Enabled = cfg.get(AgeBoolean, AoW3 + " Enabled", true).getBoolean(true);
+            AoW4Enabled = cfg.get(AgeBoolean, AoW4 + " Enabled", true).getBoolean(true);
+            AoW5Enabled = cfg.get(AgeBoolean, AoW5 + " Enabled", true).getBoolean(true);
+            AoW6Enabled = cfg.get(AgeBoolean, AoW6 + " Enabled", true).getBoolean(true);
+            NAEnabled = cfg.get(AgeBoolean, NA + " Enabled", true).getBoolean(true);
         }
         catch (Exception e)
         {
