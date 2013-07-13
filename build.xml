@@ -99,10 +99,6 @@
 
 		<echo message="Decompile finished"/>
 		
-		<copy todir="${commonsrc.dir}">
-			<fileset dir="${download.dir}/calclavia-modstats-${modstat.filename}"/>
-		</copy>
-		
 		<echo message="Copied ModStat files"/>
 		
 		<!-- Refresh MD5 -->
