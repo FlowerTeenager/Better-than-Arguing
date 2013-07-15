@@ -23,7 +23,7 @@
 	<property file="${clientsrc.dir}/fmlversion.properties" />
 
 	<property name="mc.version" value="1.6.2"/>
-	<property name="forge.version" value="9.10.0.789"/>
+	<property name="forge.version" value="9.10.0.792"/>
 	<property name="mod.version" value="0"/>
   
 	<!-- Let's make ant make work with git ;) -->
@@ -132,7 +132,7 @@
 		
 		<!-- Copy resources -->
 		<copy todir="${commonsrc.dir}">
-			<fileset dir="${resources.dir}"/>
+			<!-- <fileset dir="${resources.dir}"/> -->
 		</copy>
 	</target>
 
