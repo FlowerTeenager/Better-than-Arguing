@@ -23,6 +23,7 @@ import FlowerTeenager.BetterThanArguing.item.material.Nitre;
 import FlowerTeenager.BetterThanArguing.item.utility.Grate;
 import FlowerTeenager.BetterThanArguing.item.utility.Wicker;
 import FlowerTeenager.BetterThanArguing.item.weapon.ArrowRotted;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class AgeOfVanilla {
 	
@@ -62,5 +63,9 @@ public class AgeOfVanilla {
 	public static DetectorWood woodDetectorRail;
 	public static DetectorStone stoneDetectorRail;
 	public static DetectorSoulforgedSteel soulforgedSteelDetectorRail;
+	
+	public static void PreInit() {
+		
+	}
 	
 }

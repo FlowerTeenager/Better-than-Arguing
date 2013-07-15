@@ -3,13 +3,13 @@ package FlowerTeenager.BetterThanArguing;
 import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
+import FlowerTeenager.BetterThanArguing.age.AgeOfVanilla;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = "BetterThanArguing", name = "Better Than Arguing", version = "0")
 public class BetterThanArguingMod {
@@ -66,6 +66,9 @@ public class BetterThanArguingMod {
         {
             if (cfg.hasChanged())
                 cfg.save();
+        }
+        if(AoVEnabled) {
+        	AgeOfVanilla.PreInit();
         }
         
 	}
