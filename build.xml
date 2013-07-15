@@ -129,11 +129,6 @@
 		<copy todir="${commonsrc.dir}">
 			<fileset dir="${src.dir}"/>
 		</copy>
-		
-		<!-- Copy resources -->
-		<copy todir="${commonsrc.dir}">
-			<!-- <fileset dir="${resources.dir}"/> -->
-		</copy>
 	</target>
 
 

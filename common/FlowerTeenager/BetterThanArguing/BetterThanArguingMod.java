@@ -41,9 +41,13 @@ public class BetterThanArguingMod {
 	@EventHandler
 	public void PreInit (FMLPreInitializationEvent event)
 	{
+		FMLLog.log(Level.INFO, "Better than Arguing");
+		FMLLog.log(Level.INFO, "Copyright FlowerTeenager 2013");
+		FMLLog.log(Level.INFO, "http://flowerteenager.github.io");
 		Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
         try
         {
+        	FMLLog.log(Level.INFO, "Loading Better than Arguing Config File");
             cfg.load();
             AoVEnabled = cfg.get(AgeBoolean, AoV + " Enabled", true).getBoolean(true);
             AoW1Enabled = cfg.get(AgeBoolean, AoW1 + " Enabled", true).getBoolean(true);
@@ -63,6 +67,7 @@ public class BetterThanArguingMod {
             if (cfg.hasChanged())
                 cfg.save();
         }
+        
 	}
 	
 	@EventHandler
