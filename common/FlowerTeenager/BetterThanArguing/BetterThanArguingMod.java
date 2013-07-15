@@ -4,18 +4,21 @@ import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
 import FlowerTeenager.BetterThanArguing.age.AgeOfVanilla;
+import FlowerTeenager.BetterThanArguing.item.material.Dung;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "BetterThanArguing", name = "Better Than Arguing", version = "0")
 public class BetterThanArguingMod {
 	
 	//Better than Wolves Age Strings
 	public static final String AoV = "The Age of Vanilla";
+	public static final String AoVItems = AoV + " Items";
 	public static final String AoW = "The Age of Wood";
 	public static final String AoW1 = AoW + " Tier 1: Basic Mechanical Power";
 	public static final String AoW2 = AoW + " Tier 2: Continuous Mechanical Power";
@@ -57,6 +60,7 @@ public class BetterThanArguingMod {
             AoW5Enabled = cfg.get(AgeBoolean, AoW5 + " Enabled", true).getBoolean(true);
             AoW6Enabled = cfg.get(AgeBoolean, AoW6 + " Enabled", true).getBoolean(true);
             NAEnabled = cfg.get(AgeBoolean, NA + " Enabled", true).getBoolean(true);
+            AgeOfVanilla.dungID = cfg.getItem(AoVItems, "dung", 9000).getInt(9000);
         }
         catch (Exception e)
         {
@@ -76,7 +80,7 @@ public class BetterThanArguingMod {
 	@EventHandler
 	public void Init (FMLInitializationEvent event)
 	{
-		
+		AgeOfVanilla.Init();
 	}
 	
 	@EventHandler

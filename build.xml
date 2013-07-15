@@ -129,6 +129,14 @@
 		<copy todir="${commonsrc.dir}">
 			<fileset dir="${src.dir}"/>
 		</copy>
+		
+		<!-- Copy resoucres -->
+		<copy todir="build/forge/mcp/jars/assets">
+			<fileset dir="resources"></fileset>
+		</copy>
+		<copy todir="${commonsrc.dir}/assets">
+			<fileset dir="resources"></fileset>
+		</copy>
 	</target>
 
 
