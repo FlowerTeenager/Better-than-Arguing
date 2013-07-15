@@ -2,6 +2,7 @@ package FlowerTeenager.BetterThanArguing.age;
 
 import FlowerTeenager.BetterThanArguing.block.agriculture.BlockHemp;
 import FlowerTeenager.BetterThanArguing.block.decoration.BlockWicker;
+import FlowerTeenager.BetterThanArguing.block.decoration.PackedEarth;
 import FlowerTeenager.BetterThanArguing.block.decoration.SlabWicker;
 import FlowerTeenager.BetterThanArguing.block.rail.DetectorSoulforgedSteel;
 import FlowerTeenager.BetterThanArguing.block.rail.DetectorStone;
@@ -11,10 +12,13 @@ import FlowerTeenager.BetterThanArguing.item.agriculture.Bark;
 import FlowerTeenager.BetterThanArguing.item.agriculture.Hemp;
 import FlowerTeenager.BetterThanArguing.item.agriculture.SeedHemp;
 import FlowerTeenager.BetterThanArguing.item.food.CreeperOyster;
+import FlowerTeenager.BetterThanArguing.item.food.MuttonCooked;
+import FlowerTeenager.BetterThanArguing.item.food.MuttonRaw;
 import FlowerTeenager.BetterThanArguing.item.food.WolfchopCooked;
 import FlowerTeenager.BetterThanArguing.item.food.WolfchopRaw;
 import FlowerTeenager.BetterThanArguing.item.material.Dung;
 import FlowerTeenager.BetterThanArguing.item.material.IngotDiamond;
+import FlowerTeenager.BetterThanArguing.item.material.LeatherCut;
 import FlowerTeenager.BetterThanArguing.item.material.Nitre;
 import FlowerTeenager.BetterThanArguing.item.utility.Grate;
 import FlowerTeenager.BetterThanArguing.item.utility.Wicker;
@@ -27,6 +31,7 @@ public class AgeOfVanilla {
 	public static Bark bark;
 	public static IngotDiamond diamondIngot;
 	public static Nitre nitre;
+	public static LeatherCut cutLeather;
 	
 	//Agriculture
 	public static SeedHemp hempSeed;
@@ -35,6 +40,8 @@ public class AgeOfVanilla {
 	
 	//Food
 	public static CreeperOyster creeperOyster;
+	public static MuttonRaw muttonRaw;
+	public static MuttonCooked muttonCooked;
 	public static WolfchopRaw wolfchopRaw;
 	public static WolfchopCooked wolfchopCooked;
 	
@@ -49,6 +56,7 @@ public class AgeOfVanilla {
 	//Decoration
 	public static BlockWicker wickerBlock;
 	public static SlabWicker wickerSlab;
+	public static PackedEarth packedEarth;
 	
 	//Rails
 	public static DetectorWood woodDetectorRail;
