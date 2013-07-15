@@ -1,4 +1,4 @@
-package FlowerTeenager.BetterThanArguing.item;
+package FlowerTeenager.BetterThanArguing.item.material;
 
 import net.minecraft.item.Item;
 

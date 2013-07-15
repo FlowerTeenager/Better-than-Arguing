@@ -3,9 +3,9 @@ package FlowerTeenager.BetterThanArguing.block.agriculture;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class Hemp extends Block {
+public class BlockHemp extends Block {
 
-	public Hemp(int id, Material material) {
+	public BlockHemp(int id, Material material) {
 		super(id, material);
 		// TODO Auto-generated constructor stub
 	}
