@@ -12,5 +12,7 @@ public class Dung extends Item {
         setUnlocalizedName("dung");
         func_111206_d("betterthanarguing:dung");
 	}
+	
+	//TODO Makes Wolves drop me one Minecraft day after they eat and when dropped deplete their hunger.
 
 }
