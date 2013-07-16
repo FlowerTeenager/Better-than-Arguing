@@ -6,7 +6,7 @@
   "mcversion": "@MC-VERSION@",
   "description": "The open source rewrite of FlowerChild's Better than Wolves.",
   "credits": "Better than Wolves created by FlowerChild",
-  "logoFile": "/gfx/buildcraft/logo.png",
+  "logoFile": "",
   "url": "http://flowerteenager.github.io",
   "updateUrl": "",
   "authors": "FlowerTeenager",
