@@ -70,6 +70,7 @@ public class BetterThanArguingMod {
             NAEnabled = cfg.get(AgeBoolean, NA + " Enabled", true).getBoolean(true);
             AgeOfVanilla.dungID = cfg.getItem(AoVItems, "dung", 9000).getInt(9000);
             AgeOfVanilla.creeperOysterID = cfg.getItem(AoVItems, "creeperOyster", 9001).getInt(9001);
+            AgeOfVanilla.ingotDiamondID = cfg.getItem(AoVItems, "ingotDiamond", 9002).getInt(9002);
         }
         catch (Exception e)
         {

@@ -16,7 +16,7 @@ public class CreeperOyster extends ItemFood {
 		maxStackSize = 64;
         setCreativeTab(CreativeTabs.tabFood);
         setUnlocalizedName("creeperOyster");
-        func_111206_d("betterthanarguing:creeperoyster");
+        func_111206_d("betterthanarguing:creeper_oyster");
     	GameRegistry.registerItem(this, "Creeper Oyster");
 	}
 	

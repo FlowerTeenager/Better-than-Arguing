@@ -3,6 +3,8 @@ package FlowerTeenager.BetterThanArguing.age;
 import java.util.logging.Level;
 
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
@@ -43,8 +45,8 @@ public class AgeOfVanilla {
 	public static int dungID;
 	public static Bark bark;
 	public static int barkID;
-	public static IngotDiamond diamondIngot;
-	public static int diamondInggotID;
+	public static IngotDiamond ingotDiamond;
+	public static int ingotDiamondID;
 	public static Nitre nitre;
 	public static int nitreID;
 	public static LeatherCut cutLeather;
@@ -96,11 +98,14 @@ public class AgeOfVanilla {
 		FMLLog.log(Level.INFO, "Initializing " + BetterThanArguingMod.AoV + " Blocks and Items");
 		dung = new Dung(dungID);
 		creeperOyster = new CreeperOyster(creeperOysterID);
+		ingotDiamond = new IngotDiamond(ingotDiamondID);
 	}
 	
 	public static void Init() {
 		 LanguageRegistry.addName(dung, "Dung");
 		 LanguageRegistry.addName(creeperOyster, "Creeper Oyster");
+		 LanguageRegistry.addName(ingotDiamond, "Diamond Ingot");
+		 GameRegistry.addShapelessRecipe(new ItemStack(ingotDiamond), Item.ingotIron, creeperOyster, Item.diamond);
 	}
 	
 	@ForgeSubscribe
