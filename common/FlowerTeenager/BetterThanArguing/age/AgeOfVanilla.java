@@ -2,6 +2,10 @@ package FlowerTeenager.BetterThanArguing.age;
 
 import java.util.logging.Level;
 
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraftforge.event.ForgeSubscribe;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+
 import FlowerTeenager.BetterThanArguing.BetterThanArguingMod;
 import FlowerTeenager.BetterThanArguing.block.agriculture.BlockHemp;
 import FlowerTeenager.BetterThanArguing.block.decoration.BlockWicker;
@@ -31,6 +35,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class AgeOfVanilla {
+	
+	public static double rand;
 	
 	//Material
 	public static Dung dung;
@@ -95,5 +101,15 @@ public class AgeOfVanilla {
 	public static void Init() {
 		 LanguageRegistry.addName(dung, "Dung");
 		 LanguageRegistry.addName(creeperOyster, "Creeper Oyster");
+	}
+	
+	@ForgeSubscribe
+    public void onEntityDrop(LivingDropsEvent event) {
+		rand = Math.random();
+		if (event.entityLiving instanceof EntityCreeper) {
+			if (rand < 0.13D) {
+				event.entityLiving.dropItem(AgeOfVanilla.creeperOysterID + 256, 1);
+			}
+		}
 	}
 }

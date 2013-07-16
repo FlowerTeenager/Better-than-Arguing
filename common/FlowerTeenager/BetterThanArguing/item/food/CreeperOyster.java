@@ -1,20 +1,16 @@
 package FlowerTeenager.BetterThanArguing.item.food;
 
-import FlowerTeenager.BetterThanArguing.age.AgeOfVanilla;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.monster.EntityCreeper;
-import net.minecraft.item.Item;
-import net.minecraftforge.event.ForgeSubscribe;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class CreeperOyster extends Item {
+public class CreeperOyster extends ItemFood {
 	
-	public static double rand;
-	private static final int itemID = AgeOfVanilla.creeperOysterID; 
-
 	public CreeperOyster(int id) {
-		super(id);
+		super(id, 1, false);
 		maxStackSize = 64;
         setCreativeTab(CreativeTabs.tabFood);
         setUnlocalizedName("creeperOyster");
@@ -22,16 +18,11 @@ public class CreeperOyster extends Item {
     	GameRegistry.registerItem(this, "Creeper Oyster");
 	}
 	
-	@ForgeSubscribe
-	public void onEntityDrop(LivingDropsEvent event) {
-		if (event.source.getDamageType().equals("player")) {
-			rand = Math.random();
-			if (event.entityLiving instanceof EntityCreeper) {
-				if (rand < 0.13D) {
-					event.entityLiving.dropItem(itemID, 1);
-				}
-			}
-		}
+	public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {
+		if (player.canEat(false))
+        {
+            player.setItemInUse(item, this.getMaxItemUseDuration(item));
+        }
+        return item;
 	}
-
 }

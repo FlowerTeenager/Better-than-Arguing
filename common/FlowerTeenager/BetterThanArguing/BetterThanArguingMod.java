@@ -3,15 +3,17 @@ package FlowerTeenager.BetterThanArguing;
 import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.MinecraftForge;
 import FlowerTeenager.BetterThanArguing.age.AgeOfVanilla;
-import FlowerTeenager.BetterThanArguing.item.material.Dung;
+import FlowerTeenager.BetterThanArguing.proxy.CommonProxy;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "BetterThanArguing", name = "Better Than Arguing", version = "0")
 public class BetterThanArguingMod {
@@ -40,6 +42,12 @@ public class BetterThanArguingMod {
 	
 	//Configuration Categories
 	public static final String AgeBoolean = "Ages Enabled";
+	
+	@Instance("Better than Arguing")
+    public static BetterThanArguingMod instance;
+	
+	@SidedProxy(clientSide="FlowerTeenager.BetterThanArguing.proxy.ClientProxy", serverSide="FlowerTeenager.BetterThanArguing.proxy.CommonProxy")
+	public static CommonProxy proxy;
 	
 	@EventHandler
 	public void PreInit (FMLPreInitializationEvent event)
@@ -74,6 +82,7 @@ public class BetterThanArguingMod {
         }
         if(AoVEnabled) {
         	AgeOfVanilla.PreInit();
+        	MinecraftForge.EVENT_BUS.register(new AgeOfVanilla());
         }
         
 	}
@@ -89,5 +98,4 @@ public class BetterThanArguingMod {
 	{
 		
 	}
-
 }
