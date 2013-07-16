@@ -89,9 +89,11 @@ public class AgeOfVanilla {
 	public static void PreInit() {
 		FMLLog.log(Level.INFO, "Initializing " + BetterThanArguingMod.AoV + " Blocks and Items");
 		dung = new Dung(dungID);
+		creeperOyster = new CreeperOyster(creeperOysterID);
 	}
 	
 	public static void Init() {
 		 LanguageRegistry.addName(dung, "Dung");
+		 LanguageRegistry.addName(creeperOyster, "Creeper Oyster");
 	}
 }
