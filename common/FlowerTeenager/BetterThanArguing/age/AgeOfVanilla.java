@@ -89,7 +89,6 @@ public class AgeOfVanilla {
 	public static void PreInit() {
 		FMLLog.log(Level.INFO, "Initializing " + BetterThanArguingMod.AoV + " Blocks and Items");
 		dung = new Dung(dungID);
-    	GameRegistry.registerItem(dung, "Dung");
 	}
 	
 	public static void Init() {
