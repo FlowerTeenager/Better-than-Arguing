@@ -1,0 +1,19 @@
+[
+{
+  "modid": "BetterThanArguing",
+  "name": "Better than Arguing",
+  "version": "@VERSION@",
+  "mcversion": "@MC-VERSION@",
+  "description": "The open source rewrite of FlowerChild's Better than Wolves.",
+  "credits": "Better than Wolves created by FlowerChild",
+  "logoFile": "/gfx/buildcraft/logo.png",
+  "url": "http://flowerteenager.github.io",
+  "updateUrl": "",
+  "authors": "FlowerTeenager",
+  "parent":"",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+}
+]
