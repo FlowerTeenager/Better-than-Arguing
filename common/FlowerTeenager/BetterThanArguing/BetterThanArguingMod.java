@@ -71,6 +71,10 @@ public class BetterThanArguingMod {
             AgeOfVanilla.dungID = cfg.getItem(AoVItems, "dung", 9000).getInt(9000);
             AgeOfVanilla.creeperOysterID = cfg.getItem(AoVItems, "creeperOyster", 9001).getInt(9001);
             AgeOfVanilla.ingotDiamondID = cfg.getItem(AoVItems, "ingotDiamond", 9002).getInt(9002);
+            AgeOfVanilla.muttonRawID = cfg.getItem(AoVItems, "muttonRaw", 9003).getInt(9003);
+            AgeOfVanilla.muttonCookedID = cfg.getItem(AoVItems, "muttonCooked", 9004).getInt(9004);
+            AgeOfVanilla.wolfchopRawID = cfg.getItem(AoVItems, "wolfchopRaw", 9005).getInt(9005);
+            AgeOfVanilla.wolfchopCookedID = cfg.getItem(AoVItems, "wolfchopCooked", 9006).getInt(9006);
         }
         catch (Exception e)
         {

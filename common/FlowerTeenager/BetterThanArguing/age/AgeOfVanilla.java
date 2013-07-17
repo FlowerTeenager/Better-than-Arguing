@@ -4,9 +4,10 @@ import java.util.logging.Level;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import FlowerTeenager.BetterThanArguing.BetterThanArguingMod;
@@ -101,6 +102,10 @@ public class AgeOfVanilla {
 		dung = new Dung(dungID);
 		creeperOyster = new CreeperOyster(creeperOysterID);
 		ingotDiamond = new IngotDiamond(ingotDiamondID);
+		muttonRaw = new MuttonRaw(muttonRawID);
+		muttonCooked = new MuttonCooked(muttonCookedID);
+		wolfchopRaw = new WolfchopRaw(wolfchopRawID);
+		wolfchopCooked = new WolfchopCooked(wolfchopCookedID);
 	}
 	
 	public static void Init() {
@@ -112,6 +117,10 @@ public class AgeOfVanilla {
 		 LanguageRegistry.addName(dung, "Dung");
 		 LanguageRegistry.addName(creeperOyster, "Creeper Oyster");
 		 LanguageRegistry.addName(ingotDiamond, "Diamond Ingot");
+		 LanguageRegistry.addName(muttonRaw, "Raw Mutton");
+		 LanguageRegistry.addName(muttonCooked, "Cooked Mutton");
+		 LanguageRegistry.addName(wolfchopRaw, "Raw Wolfchop");
+		 LanguageRegistry.addName(wolfchopCooked, "Cooked Wolfchop");
 	}
 	
 	public static void InitRecipes() {
@@ -147,6 +156,10 @@ public class AgeOfVanilla {
 		GameRegistry.addRecipe(new ItemStack(Item.axeIron), "M ", "MS", " S", Character.valueOf('M'), Item.ingotIron, Character.valueOf('S'), Item.stick);
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeGold));
 		GameRegistry.addRecipe(new ItemStack(Item.axeGold), "M ", "MS", " S", Character.valueOf('M'), Item.ingotGold, Character.valueOf('S'), Item.stick);
+		
+		//Smelt that meat!
+		GameRegistry.addSmelting(muttonRawID + 256, new ItemStack(muttonCooked), 5);
+		GameRegistry.addSmelting(wolfchopRawID + 256, new ItemStack(wolfchopCooked), 5);
 	}
 	
 	@ForgeSubscribe
@@ -156,6 +169,12 @@ public class AgeOfVanilla {
 			if (rand < 0.13D) {
 				event.entityLiving.dropItem(AgeOfVanilla.creeperOysterID + 256, 1);
 			}
+		}
+		if (event.entityLiving instanceof EntityWolf) {
+			event.entityLiving.dropItem(AgeOfVanilla.wolfchopRawID + 256, 1);
+		}
+		if (event.entityLiving instanceof EntitySheep) {
+			event.entityLiving.dropItem(AgeOfVanilla.muttonRawID + 256, 1);
 		}
 	}
 }
