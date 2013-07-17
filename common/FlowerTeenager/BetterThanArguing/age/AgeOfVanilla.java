@@ -2,6 +2,7 @@ package FlowerTeenager.BetterThanArguing.age;
 
 import java.util.logging.Level;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -114,6 +115,7 @@ public class AgeOfVanilla {
 	}
 	
 	public static void InitRecipes() {
+		//Everything related to the Diamond Ingot
 		GameRegistry.addShapelessRecipe(new ItemStack(ingotDiamond), Item.ingotIron, creeperOyster, Item.diamond);
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.swordDiamond));
 		GameRegistry.addRecipe(new ItemStack(Item.swordDiamond), "I", "I", "S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
@@ -135,6 +137,16 @@ public class AgeOfVanilla {
 		GameRegistry.addRecipe(new ItemStack(Item.legsDiamond), "III", "I I", "I I", Character.valueOf('I'), ingotDiamond);
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.bootsDiamond));
 		GameRegistry.addRecipe(new ItemStack(Item.bootsDiamond), "I I", "I I", Character.valueOf('I'), ingotDiamond);
+		
+		//The changes made to axes
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeWood));
+		GameRegistry.addRecipe(new ItemStack(Item.axeWood), "M ", "MS", " S", Character.valueOf('M'), Block.planks, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeStone));
+		GameRegistry.addRecipe(new ItemStack(Item.axeStone), "M ", "MS", " S", Character.valueOf('M'), Block.cobblestone, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeIron));
+		GameRegistry.addRecipe(new ItemStack(Item.axeIron), "M ", "MS", " S", Character.valueOf('M'), Item.ingotIron, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeGold));
+		GameRegistry.addRecipe(new ItemStack(Item.axeGold), "M ", "MS", " S", Character.valueOf('M'), Item.ingotGold, Character.valueOf('S'), Item.stick);
 	}
 	
 	@ForgeSubscribe
