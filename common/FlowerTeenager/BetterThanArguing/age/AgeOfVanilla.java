@@ -126,10 +126,15 @@ public class AgeOfVanilla {
 		GameRegistry.addRecipe(new ItemStack(Item.axeDiamond), " I", "SI", "S ", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.hoeDiamond));
 		GameRegistry.addRecipe(new ItemStack(Item.hoeDiamond), "II", "S ", "S ", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
+		GameRegistry.addRecipe(new ItemStack(Item.hoeDiamond), "II", " S", " S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.helmetDiamond));
+		GameRegistry.addRecipe(new ItemStack(Item.helmetDiamond), "III", "I I", Character.valueOf('I'), ingotDiamond);
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.plateDiamond));
+		GameRegistry.addRecipe(new ItemStack(Item.plateDiamond), "I I", "III", "III", Character.valueOf('I'), ingotDiamond);
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.legsDiamond));
+		GameRegistry.addRecipe(new ItemStack(Item.legsDiamond), "III", "I I", "I I", Character.valueOf('I'), ingotDiamond);
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.bootsDiamond));
+		GameRegistry.addRecipe(new ItemStack(Item.bootsDiamond), "I I", "I I", Character.valueOf('I'), ingotDiamond);
 	}
 	
 	@ForgeSubscribe
