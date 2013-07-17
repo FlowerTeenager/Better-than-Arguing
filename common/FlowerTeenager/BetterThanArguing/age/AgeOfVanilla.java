@@ -5,12 +5,9 @@ import java.util.logging.Level;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 import net.minecraft.item.crafting.CraftingManager;
-
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
-
 import FlowerTeenager.BetterThanArguing.BetterThanArguingMod;
 import FlowerTeenager.BetterThanArguing.block.agriculture.BlockHemp;
 import FlowerTeenager.BetterThanArguing.block.decoration.BlockWicker;
@@ -35,7 +32,7 @@ import FlowerTeenager.BetterThanArguing.item.material.Nitre;
 import FlowerTeenager.BetterThanArguing.item.utility.Grate;
 import FlowerTeenager.BetterThanArguing.item.utility.Wicker;
 import FlowerTeenager.BetterThanArguing.item.weapon.ArrowRotted;
-
+import FlowerTeenager.BetterThanArguing.utilites.CraftingUtilities;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -118,20 +115,21 @@ public class AgeOfVanilla {
 	
 	public static void InitRecipes() {
 		GameRegistry.addShapelessRecipe(new ItemStack(ingotDiamond), Item.ingotIron, creeperOyster, Item.diamond);
-		CraftingManager.getInstance().getRecipeList().remove(Item.swordDiamond);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.swordDiamond));
 		GameRegistry.addRecipe(new ItemStack(Item.swordDiamond), "I", "I", "S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
-		CraftingManager.getInstance().getRecipeList().remove(Item.shovelDiamond);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.shovelDiamond));
 		GameRegistry.addRecipe(new ItemStack(Item.shovelDiamond), "I", "S", "S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
-		CraftingManager.getInstance().getRecipeList().remove(Item.pickaxeDiamond);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.pickaxeDiamond));
 		GameRegistry.addRecipe(new ItemStack(Item.pickaxeDiamond), "III", " S ", " S ", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
-		CraftingManager.getInstance().getRecipeList().remove(Item.axeDiamond);
-		GameRegistry.addRecipe(new ItemStack(Item.axeDiamond), "I ", " IS", " S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
-		CraftingManager.getInstance().getRecipeList().remove(Item.hoeDiamond);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeDiamond));
+		GameRegistry.addRecipe(new ItemStack(Item.axeDiamond), "I ", "IS", " S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
+		GameRegistry.addRecipe(new ItemStack(Item.axeDiamond), " I", "SI", "S ", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.hoeDiamond));
 		GameRegistry.addRecipe(new ItemStack(Item.hoeDiamond), "II", "S ", "S ", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
-		CraftingManager.getInstance().getRecipeList().remove(Item.helmetDiamond);
-		CraftingManager.getInstance().getRecipeList().remove(Item.plateDiamond);
-		CraftingManager.getInstance().getRecipeList().remove(Item.legsDiamond);
-		CraftingManager.getInstance().getRecipeList().remove(Item.bootsDiamond);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.helmetDiamond));
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.plateDiamond));
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.legsDiamond));
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.bootsDiamond));
 	}
 	
 	@ForgeSubscribe
