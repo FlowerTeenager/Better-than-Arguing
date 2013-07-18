@@ -6,7 +6,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class IngotDiamond extends Item {
 	
-    public IngotDiamond(int id) {
+    public static int ID;
+
+	public IngotDiamond(int id) {
     	super(id);
     	maxStackSize = 64;
     	setCreativeTab(CreativeTabs.tabMaterials);

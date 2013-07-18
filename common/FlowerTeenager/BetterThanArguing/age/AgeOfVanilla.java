@@ -45,47 +45,30 @@ public class AgeOfVanilla {
 	
 	//Material
 	public static Dung dung;
-	public static int dungID;
 	public static Bark bark;
-	public static int barkID;
 	public static IngotDiamond ingotDiamond;
-	public static int ingotDiamondID;
 	public static Nitre nitre;
-	public static int nitreID;
 	public static LeatherCut cutLeather;
-	public static int cutLeatherID;
 	
 	//Agriculture
 	public static SeedHemp hempSeed;
-	public static int hempSeedID;
 	public static Hemp hempItem;
-	public static int hempItemID;
 	public static BlockHemp hempBlock;
-	public static int hempBlockID;
 	
 	//Food
 	public static CreeperOyster creeperOyster;
-	public static int creeperOysterID;
 	public static MuttonRaw muttonRaw;
-	public static int muttonRawID;
 	public static MuttonCooked muttonCooked;
-	public static int muttonCookedID;
 	public static WolfchopRaw wolfchopRaw;
-	public static int wolfchopRawID;
 	public static WolfchopCooked wolfchopCooked;
-	public static int wolfchopCookedID;
 	
 	//Utility
 	public static LightningRod lightningRod;
-	public static int lightningRodID;
 	public static Wicker wickerItem;
-	public static int wickerItemID;
 	public static Grate grate;
-	public static int grateID;
 	
 	//Weapon
 	public static ArrowRotted rottedArrow;
-	public static int rottedArrowID;
 	
 	//Decoration
 	public static BlockWicker wickerBlock;
@@ -99,16 +82,16 @@ public class AgeOfVanilla {
 	
 	public static void PreInit() {
 		FMLLog.log(Level.INFO, "Initializing " + BetterThanArguingMod.AoV + " Blocks and Items");
-		dung = new Dung(dungID);
-		creeperOyster = new CreeperOyster(creeperOysterID);
-		ingotDiamond = new IngotDiamond(ingotDiamondID);
-		muttonRaw = new MuttonRaw(muttonRawID);
-		muttonCooked = new MuttonCooked(muttonCookedID);
-		wolfchopRaw = new WolfchopRaw(wolfchopRawID);
-		wolfchopCooked = new WolfchopCooked(wolfchopCookedID);
-		hempSeed = new SeedHemp(hempSeedID);
-		hempItem = new Hemp(hempItemID);
-		hempBlock = new BlockHemp(hempBlockID);
+		dung = new Dung(dung.ID);
+		creeperOyster = new CreeperOyster(creeperOyster.ID);
+		ingotDiamond = new IngotDiamond(ingotDiamond.ID);
+		muttonRaw = new MuttonRaw(muttonRaw.ID);
+		muttonCooked = new MuttonCooked(muttonCooked.ID);
+		wolfchopRaw = new WolfchopRaw(wolfchopRaw.ID);
+		wolfchopCooked = new WolfchopCooked(wolfchopCooked.ID);
+		hempSeed = new SeedHemp(hempSeed.ID);
+		hempItem = new Hemp(hempItem.ID);
+		hempBlock = new BlockHemp(hempBlock.ID);
 	}
 	
 	public static void Init() {
@@ -163,8 +146,8 @@ public class AgeOfVanilla {
 		GameRegistry.addRecipe(new ItemStack(Item.axeGold), "M ", "MS", " S", Character.valueOf('M'), Item.ingotGold, Character.valueOf('S'), Item.stick);
 		
 		//Smelt that meat!
-		GameRegistry.addSmelting(muttonRawID + 256, new ItemStack(muttonCooked), 5);
-		GameRegistry.addSmelting(wolfchopRawID + 256, new ItemStack(wolfchopCooked), 5);
+		GameRegistry.addSmelting(muttonRaw.itemID, new ItemStack(muttonCooked), 5);
+		GameRegistry.addSmelting(wolfchopRaw.itemID, new ItemStack(wolfchopCooked), 5);
 	}
 	
 	@ForgeSubscribe
@@ -172,14 +155,14 @@ public class AgeOfVanilla {
 		rand = Math.random();
 		if (event.entityLiving instanceof EntityCreeper) {
 			if (rand < 0.13D) {
-				event.entityLiving.dropItem(AgeOfVanilla.creeperOysterID + 256, 1);
+				event.entityLiving.dropItem(AgeOfVanilla.creeperOyster.itemID , 1);
 			}
 		}
 		if (event.entityLiving instanceof EntityWolf) {
-			event.entityLiving.dropItem(AgeOfVanilla.wolfchopRawID + 256, 1);
+			event.entityLiving.dropItem(AgeOfVanilla.wolfchopRaw.itemID, 1);
 		}
 		if (event.entityLiving instanceof EntitySheep) {
-			event.entityLiving.dropItem(AgeOfVanilla.muttonRawID + 256, 1);
+			event.entityLiving.dropItem(AgeOfVanilla.muttonRaw.itemID, 1);
 		}
 	}
 }

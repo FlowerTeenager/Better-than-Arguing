@@ -11,6 +11,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CreeperOyster extends ItemFood {
 	
+	public static int ID;
+
 	public CreeperOyster(int id) {
 		super(id, 1, false);
 		maxStackSize = 64;

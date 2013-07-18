@@ -6,6 +6,8 @@ import net.minecraft.item.Item;
 
 public class Dung extends Item {
 
+	public static int ID;
+
 	public Dung(int id) {
 		super(id);
 		maxStackSize = 64;

@@ -10,8 +10,10 @@ import FlowerTeenager.BetterThanArguing.age.AgeOfVanilla;
 
 public class SeedHemp extends ItemSeeds implements IPlantable {
 
+	public static int ID;
+	
 	public SeedHemp(int id) {
-		super(id, AgeOfVanilla.hempBlockID, Block.tilledField.blockID);
+		super(id, AgeOfVanilla.hempBlock.ID, Block.tilledField.blockID);
 		maxStackSize = 64;
 		setUnlocalizedName("hempSeed");
         func_111206_d("betterthanarguing:hemp_seeds");
@@ -25,7 +27,7 @@ public class SeedHemp extends ItemSeeds implements IPlantable {
 
 	@Override
 	public int getPlantID(World world, int x, int y, int z) {
-		return AgeOfVanilla.hempBlockID;
+		return AgeOfVanilla.hempBlock.blockID;
 	}
 
 	@Override

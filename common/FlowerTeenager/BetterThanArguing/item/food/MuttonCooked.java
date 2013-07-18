@@ -10,6 +10,8 @@ import net.minecraft.world.World;
 
 public class MuttonCooked extends ItemFood {
 
+	public static int ID;
+
 	public MuttonCooked(int id) {
 		super(id, 1, false);
 		maxStackSize = 64;

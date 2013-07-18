@@ -69,16 +69,16 @@ public class BetterThanArguingMod {
             AoW5Enabled = cfg.get(AgeBoolean, AoW5 + " Enabled", true).getBoolean(true);
             AoW6Enabled = cfg.get(AgeBoolean, AoW6 + " Enabled", true).getBoolean(true);
             NAEnabled = cfg.get(AgeBoolean, NA + " Enabled", true).getBoolean(true);
-            AgeOfVanilla.dungID = cfg.getItem(AoVItems, "dung", 9000).getInt(9000);
-            AgeOfVanilla.creeperOysterID = cfg.getItem(AoVItems, "creeperOyster", 9001).getInt(9001);
-            AgeOfVanilla.ingotDiamondID = cfg.getItem(AoVItems, "ingotDiamond", 9002).getInt(9002);
-            AgeOfVanilla.muttonRawID = cfg.getItem(AoVItems, "muttonRaw", 9003).getInt(9003);
-            AgeOfVanilla.muttonCookedID = cfg.getItem(AoVItems, "muttonCooked", 9004).getInt(9004);
-            AgeOfVanilla.wolfchopRawID = cfg.getItem(AoVItems, "wolfchopRaw", 9005).getInt(9005);
-            AgeOfVanilla.wolfchopCookedID = cfg.getItem(AoVItems, "wolfchopCooked", 9006).getInt(9006);
-            AgeOfVanilla.hempSeedID = cfg.getItem(AoVItems, "hempSeed", 9007).getInt(9007);
-            AgeOfVanilla.hempItemID = cfg.getItem(AoVItems, "hempItem", 9008).getInt(9008);
-            AgeOfVanilla.hempBlockID = cfg.getBlock(AoVBlocks, "hempBlock",3000).getInt(3000);
+            AgeOfVanilla.dung.ID = cfg.getItem(AoVItems, "dung", 9000).getInt(9000);
+            AgeOfVanilla.creeperOyster.ID = cfg.getItem(AoVItems, "creeperOyster", 9001).getInt(9001);
+            AgeOfVanilla.ingotDiamond.ID = cfg.getItem(AoVItems, "ingotDiamond", 9002).getInt(9002);
+            AgeOfVanilla.muttonRaw.ID = cfg.getItem(AoVItems, "muttonRaw", 9003).getInt(9003);
+            AgeOfVanilla.muttonCooked.ID = cfg.getItem(AoVItems, "muttonCooked", 9004).getInt(9004);
+            AgeOfVanilla.wolfchopRaw.ID = cfg.getItem(AoVItems, "wolfchopRaw", 9005).getInt(9005);
+            AgeOfVanilla.wolfchopCooked.ID = cfg.getItem(AoVItems, "wolfchopCooked", 9006).getInt(9006);
+            AgeOfVanilla.hempSeed.ID = cfg.getItem(AoVItems, "hempSeed", 9007).getInt(9007);
+            AgeOfVanilla.hempItem.ID = cfg.getItem(AoVItems, "hempItem", 9008).getInt(9008);
+            AgeOfVanilla.hempBlock.ID = cfg.getBlock(AoVBlocks, "hempBlock",3000).getInt(3000);
         }
         catch (Exception e)
         {

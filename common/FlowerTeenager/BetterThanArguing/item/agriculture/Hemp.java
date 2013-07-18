@@ -6,6 +6,8 @@ import net.minecraft.item.Item;
 
 public class Hemp extends Item {
 
+	public static int ID;
+
 	public Hemp(int par1) {
 		super(par1);
 		maxStackSize = 64;

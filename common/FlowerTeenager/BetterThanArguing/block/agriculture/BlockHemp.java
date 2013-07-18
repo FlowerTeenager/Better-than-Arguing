@@ -10,6 +10,8 @@ import net.minecraft.item.Item;
 
 public class BlockHemp extends BlockCrops {
 
+	public static int ID;
+	
 	public BlockHemp(int id) {
 		super(id);
 		setUnlocalizedName("hempBlock");
@@ -20,13 +22,13 @@ public class BlockHemp extends BlockCrops {
 	@Override
 	public int getCropItem()
     {
-        return AgeOfVanilla.hempItemID + 256;
+        return AgeOfVanilla.hempItem.itemID;
     }
 	
 	@Override
 	public int getSeedItem()
     {
-        return AgeOfVanilla.hempSeedID + 256;
+        return AgeOfVanilla.hempSeed.itemID;
     }
 
 }

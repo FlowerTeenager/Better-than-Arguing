@@ -10,6 +10,8 @@ import net.minecraft.world.World;
 
 public class WolfchopRaw extends ItemFood {
 
+	public static int ID;
+
 	public WolfchopRaw(int id) {
 		super(id, 1, false);
 		maxStackSize = 64;
