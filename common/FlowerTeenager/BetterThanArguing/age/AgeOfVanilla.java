@@ -121,6 +121,10 @@ public class AgeOfVanilla {
 		OreDictionary.registerOre("ingotGold", Item.ingotGold);
 		
 		OreDictionary.registerOre("ingotDiamond", ingotDiamond);
+		OreDictionary.registerOre("seedHemp", hempSeed);
+		OreDictionary.registerOre("itemSeed", hempSeed);
+		OreDictionary.registerOre("itemHempSeed", hempSeed);
+		OreDictionary.registerOre("cropHemp", hempItem);
 	}
 	
 	public static void InitRecipes() {
