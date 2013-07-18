@@ -55,6 +55,7 @@ public class BetterThanArguingMod {
             AgeOfVanilla.hempSeed.ID = cfg.getItem(AgeOfVanilla.AgeItems, "hempSeed", 9007).getInt(9007);
             AgeOfVanilla.hempItem.ID = cfg.getItem(AgeOfVanilla.AgeItems, "hempItem", 9008).getInt(9008);
             AgeOfVanilla.hempBlock.ID = cfg.getBlock(AgeOfVanilla.AgeBlocks, "hempBlock",3000).getInt(3000);
+            AgeOfWood.tier1.gear.ID = cfg.getItem(AgeOfWood.tier1.AgeItems, "gear", 9009).getInt(9009);
         }
         catch (Exception e)
         {
@@ -65,9 +66,14 @@ public class BetterThanArguingMod {
             if (cfg.hasChanged())
                 cfg.save();
         }
-        if(AgeOfVanilla.AgeEnabled) {
+        if(AgeOfVanilla.AgeEnabled)
+        {
         	AgeOfVanilla.PreInit();
         	MinecraftForge.EVENT_BUS.register(new AgeOfVanilla());
+        }
+        if(AgeOfWood.tier1.AgeEnabled)
+        {
+        	AgeOfWood.tier1.PreInit();
         }
         
 	}
@@ -78,6 +84,10 @@ public class BetterThanArguingMod {
 		if(AgeOfVanilla.AgeEnabled)
 		{
 			AgeOfVanilla.Init();
+		}
+		if(AgeOfWood.tier1.AgeEnabled)
+		{
+			AgeOfWood.tier1.Init();
 		}
 	}
 	
