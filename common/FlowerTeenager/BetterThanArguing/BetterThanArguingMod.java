@@ -21,6 +21,7 @@ public class BetterThanArguingMod {
 	//Better than Wolves Age Strings
 	public static final String AoV = "The Age of Vanilla";
 	public static final String AoVItems = AoV + " Items";
+	public static final String AoVBlocks = AoV + " Blocks";
 	public static final String AoW = "The Age of Wood";
 	public static final String AoW1 = AoW + " Tier 1: Basic Mechanical Power";
 	public static final String AoW2 = AoW + " Tier 2: Continuous Mechanical Power";
@@ -75,6 +76,9 @@ public class BetterThanArguingMod {
             AgeOfVanilla.muttonCookedID = cfg.getItem(AoVItems, "muttonCooked", 9004).getInt(9004);
             AgeOfVanilla.wolfchopRawID = cfg.getItem(AoVItems, "wolfchopRaw", 9005).getInt(9005);
             AgeOfVanilla.wolfchopCookedID = cfg.getItem(AoVItems, "wolfchopCooked", 9006).getInt(9006);
+            AgeOfVanilla.hempSeedID = cfg.getItem(AoVItems, "hempSeed", 9007).getInt(9007);
+            AgeOfVanilla.hempItemID = cfg.getItem(AoVItems, "hempItem", 9008).getInt(9008);
+            AgeOfVanilla.hempBlockID = cfg.getBlock(AoVBlocks, "hempBlock",3000).getInt(3000);
         }
         catch (Exception e)
         {

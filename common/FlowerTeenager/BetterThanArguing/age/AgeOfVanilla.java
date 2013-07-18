@@ -106,6 +106,9 @@ public class AgeOfVanilla {
 		muttonCooked = new MuttonCooked(muttonCookedID);
 		wolfchopRaw = new WolfchopRaw(wolfchopRawID);
 		wolfchopCooked = new WolfchopCooked(wolfchopCookedID);
+		hempSeed = new SeedHemp(hempSeedID);
+		hempItem = new Hemp(hempItemID);
+		hempBlock = new BlockHemp(hempBlockID);
 	}
 	
 	public static void Init() {
@@ -121,6 +124,8 @@ public class AgeOfVanilla {
 		 LanguageRegistry.addName(muttonCooked, "Cooked Mutton");
 		 LanguageRegistry.addName(wolfchopRaw, "Raw Wolfchop");
 		 LanguageRegistry.addName(wolfchopCooked, "Cooked Wolfchop");
+		 LanguageRegistry.addName(hempSeed, "Hemp Seeds");
+		 LanguageRegistry.addName(hempItem, "Hemp");
 	}
 	
 	public static void InitRecipes() {
