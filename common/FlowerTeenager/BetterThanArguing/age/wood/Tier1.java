@@ -2,9 +2,11 @@ package FlowerTeenager.BetterThanArguing.age.wood;
 
 import java.util.logging.Level;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import FlowerTeenager.BetterThanArguing.age.AgeOfWood;
+import FlowerTeenager.BetterThanArguing.block.mechanical.MillStone;
 import FlowerTeenager.BetterThanArguing.item.mechanical.Gear;
 import FlowerTeenager.BetterThanArguing.utilites.CraftingUtilities;
 import cpw.mods.fml.common.FMLLog;
@@ -20,11 +22,13 @@ public class Tier1 {
 	
 	//Mechanical
 	public static Gear gear;
+	public static MillStone millStone;
 	
 	public static void PreInit()
 	{
 		FMLLog.log(Level.INFO, "Initializing " + Age + " Blocks and Items");
-		gear = new Gear(Gear.ID);
+		gear = new Gear(gear.ID);
+		millStone = new MillStone(millStone.ID);
 	}
 	
 	public static void Init()
@@ -37,6 +41,7 @@ public class Tier1 {
 	public static void AddNames()
 	{
 		LanguageRegistry.addName(gear, "Gear");
+		LanguageRegistry.addName(millStone, "Mill Stone");
 	}
 	
 	public static void RegisterDictionary()
@@ -48,6 +53,7 @@ public class Tier1 {
 	public static void InitRecipes()
 	{
 		CraftingUtilities.AddRecipe(new ItemStack(gear, 2), " S ", "SPS", " S ", Character.valueOf('S'), "stickWood", Character.valueOf('P'), "plankWood");
+		CraftingUtilities.AddRecipe(new ItemStack(millStone), "SSS", "SSS", "SGS", Character.valueOf('S'), Block.stone, Character.valueOf('G'), "itemGear");
 	}
 
 }

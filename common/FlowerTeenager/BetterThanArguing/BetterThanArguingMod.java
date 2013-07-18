@@ -56,6 +56,7 @@ public class BetterThanArguingMod {
             AgeOfVanilla.hempItem.ID = cfg.getItem(AgeOfVanilla.AgeItems, "hempItem", 9008).getInt(9008);
             AgeOfVanilla.hempBlock.ID = cfg.getBlock(AgeOfVanilla.AgeBlocks, "hempBlock",3000).getInt(3000);
             AgeOfWood.tier1.gear.ID = cfg.getItem(AgeOfWood.tier1.AgeItems, "gear", 9009).getInt(9009);
+            AgeOfWood.tier1.millStone.ID = cfg.getBlock(AgeOfWood.tier1.AgeBlocks, "millStone", 3001).getInt(3001);
         }
         catch (Exception e)
         {
