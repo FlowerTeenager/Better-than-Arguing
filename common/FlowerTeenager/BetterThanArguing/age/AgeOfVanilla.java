@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import FlowerTeenager.BetterThanArguing.BetterThanArguingMod;
 import FlowerTeenager.BetterThanArguing.block.agriculture.BlockHemp;
 import FlowerTeenager.BetterThanArguing.block.decoration.BlockWicker;
@@ -96,6 +97,7 @@ public class AgeOfVanilla {
 	
 	public static void Init() {
 		AddNames();
+		RegisterDictionary();
 		InitRecipes();
 	}
 	
@@ -111,39 +113,53 @@ public class AgeOfVanilla {
 		 LanguageRegistry.addName(hempItem, "Hemp");
 	}
 	
+	public static void RegisterDictionary()
+	{
+		//You never know when you might need an extra layer of compatibility for Vanilla.
+		OreDictionary.registerOre("gemDiamond", Item.diamond);
+		OreDictionary.registerOre("ingotIron", Item.ingotIron);
+		OreDictionary.registerOre("ingotGold", Item.ingotGold);
+		
+		OreDictionary.registerOre("ingotDiamond", ingotDiamond);
+	}
+	
 	public static void InitRecipes() {
 		//Everything related to the Diamond Ingot
-		GameRegistry.addShapelessRecipe(new ItemStack(ingotDiamond), Item.ingotIron, creeperOyster, Item.diamond);
+		CraftingUtilities.AddShapelessRecipe(new ItemStack(ingotDiamond), "gemDiamond", "ingotIron", creeperOyster);
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.swordDiamond));
-		GameRegistry.addRecipe(new ItemStack(Item.swordDiamond), "I", "I", "S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.swordDiamond), "I", "I", "S", Character.valueOf('I'), "ingotDiamond", Character.valueOf('S'), "stickWood");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.shovelDiamond));
-		GameRegistry.addRecipe(new ItemStack(Item.shovelDiamond), "I", "S", "S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.shovelDiamond), "I", "S", "S", Character.valueOf('I'), "ingotDiamond", Character.valueOf('S'), "stickWood");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.pickaxeDiamond));
-		GameRegistry.addRecipe(new ItemStack(Item.pickaxeDiamond), "III", " S ", " S ", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.pickaxeDiamond), "III", " S ", " S ", Character.valueOf('I'), "ingotDiamond", Character.valueOf('S'), "stickWood");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeDiamond));
-		GameRegistry.addRecipe(new ItemStack(Item.axeDiamond), "I ", "IS", " S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
-		GameRegistry.addRecipe(new ItemStack(Item.axeDiamond), " I", "SI", "S ", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeDiamond), "I ", "IS", " S", Character.valueOf('I'), "ingotDiamond", Character.valueOf('S'), "stickWood");
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeDiamond), " I", "SI", "S ", Character.valueOf('I'), "ingotDiamond", Character.valueOf('S'), "stickWood");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.hoeDiamond));
-		GameRegistry.addRecipe(new ItemStack(Item.hoeDiamond), "II", "S ", "S ", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
-		GameRegistry.addRecipe(new ItemStack(Item.hoeDiamond), "II", " S", " S", Character.valueOf('I'), ingotDiamond, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.hoeDiamond), "II", "S ", "S ", Character.valueOf('I'), "ingotDiamond", Character.valueOf('S'), "stickWood");
+		CraftingUtilities.AddRecipe(new ItemStack(Item.hoeDiamond), "II", " S", " S", Character.valueOf('I'), "ingotDiamond", Character.valueOf('S'), "stickWood");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.helmetDiamond));
-		GameRegistry.addRecipe(new ItemStack(Item.helmetDiamond), "III", "I I", Character.valueOf('I'), ingotDiamond);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.helmetDiamond), "III", "I I", Character.valueOf('I'), "ingotDiamond");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.plateDiamond));
-		GameRegistry.addRecipe(new ItemStack(Item.plateDiamond), "I I", "III", "III", Character.valueOf('I'), ingotDiamond);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.plateDiamond), "I I", "III", "III", Character.valueOf('I'), "ingotDiamond");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.legsDiamond));
-		GameRegistry.addRecipe(new ItemStack(Item.legsDiamond), "III", "I I", "I I", Character.valueOf('I'), ingotDiamond);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.legsDiamond), "III", "I I", "I I", Character.valueOf('I'), "ingotDiamond");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.bootsDiamond));
-		GameRegistry.addRecipe(new ItemStack(Item.bootsDiamond), "I I", "I I", Character.valueOf('I'), ingotDiamond);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.bootsDiamond), "I I", "I I", Character.valueOf('I'), "ingotDiamond");
 		
 		//The changes made to axes
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeWood));
-		GameRegistry.addRecipe(new ItemStack(Item.axeWood), "M ", "MS", " S", Character.valueOf('M'), Block.planks, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeWood), "M ", "MS", " S", Character.valueOf('M'), "plankWood", Character.valueOf('S'), "stickWood");
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeWood), " M", "SM", "S ", Character.valueOf('M'), "plankWood", Character.valueOf('S'), "stickWood");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeStone));
-		GameRegistry.addRecipe(new ItemStack(Item.axeStone), "M ", "MS", " S", Character.valueOf('M'), Block.cobblestone, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeStone), "M ", "MS", " S", Character.valueOf('M'), Block.cobblestone, Character.valueOf('S'), "stickWood");
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeStone), " M", "SM", "S ", Character.valueOf('M'), Block.cobblestone, Character.valueOf('S'), "stickWood");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeIron));
-		GameRegistry.addRecipe(new ItemStack(Item.axeIron), "M ", "MS", " S", Character.valueOf('M'), Item.ingotIron, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeIron), "M ", "MS", " S", Character.valueOf('M'), "ingotIron", Character.valueOf('S'), "stickWood");
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeIron), " M", "SM", "S ", Character.valueOf('M'), "ingotIron", Character.valueOf('S'), "stickWood");
 		CraftingUtilities.RemoveRecipe(new ItemStack (Item.axeGold));
-		GameRegistry.addRecipe(new ItemStack(Item.axeGold), "M ", "MS", " S", Character.valueOf('M'), Item.ingotGold, Character.valueOf('S'), Item.stick);
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeGold), "M ", "MS", " S", Character.valueOf('M'), "ingotGold", Character.valueOf('S'), "stickWood");
+		CraftingUtilities.AddRecipe(new ItemStack(Item.axeGold), " M", "SM", "S ", Character.valueOf('M'), "ingotGold", Character.valueOf('S'), "stickWood");
 		
 		//Smelt that meat!
 		GameRegistry.addSmelting(muttonRaw.itemID, new ItemStack(muttonCooked), 5);

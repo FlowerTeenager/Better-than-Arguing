@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.RecipesTools;
-import net.minecraft.item.crafting.ShapedRecipes;
-import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CraftingUtilities {
 	
@@ -27,5 +27,15 @@ public class CraftingUtilities {
 	            recipes.remove(scan);
 	        }
 	    }
+	}
+	
+	public static void AddRecipe(ItemStack item, Object... parts)
+	{
+		GameRegistry.addRecipe(new ShapedOreRecipe(item, parts));
+	}
+	
+	public static void AddShapelessRecipe(ItemStack item, Object... parts)
+	{
+		CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(item, parts));
 	}
 }
