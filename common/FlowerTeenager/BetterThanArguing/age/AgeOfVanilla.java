@@ -44,6 +44,12 @@ public class AgeOfVanilla {
 	
 	public static double rand;
 	
+	//Age Information
+	public static final String Age = "The Age of Vanilla";
+	public static final String AgeItems = Age + " Items";
+	public static final String AgeBlocks = Age + " Blocks";
+	public static boolean AgeEnabled; 
+	
 	//Material
 	public static Dung dung;
 	public static Bark bark;
@@ -82,7 +88,7 @@ public class AgeOfVanilla {
 	public static DetectorSoulforgedSteel soulforgedSteelDetectorRail;
 	
 	public static void PreInit() {
-		FMLLog.log(Level.INFO, "Initializing " + BetterThanArguingMod.AoV + " Blocks and Items");
+		FMLLog.log(Level.INFO, "Initializing " + Age + " Blocks and Items");
 		dung = new Dung(dung.ID);
 		creeperOyster = new CreeperOyster(creeperOyster.ID);
 		ingotDiamond = new IngotDiamond(ingotDiamond.ID);
