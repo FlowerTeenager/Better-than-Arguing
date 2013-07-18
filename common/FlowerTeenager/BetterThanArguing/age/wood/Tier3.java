@@ -1,5 +1,7 @@
 package FlowerTeenager.BetterThanArguing.age.wood;
 
+import FlowerTeenager.BetterThanArguing.age.AgeOfWood;
+
 public class Tier3 {
 	
 	//Age Information
