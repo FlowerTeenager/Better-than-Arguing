@@ -7,7 +7,6 @@ import net.minecraftforge.common.MinecraftForge;
 import FlowerTeenager.BetterThanArguing.age.AgeOfVanilla;
 import FlowerTeenager.BetterThanArguing.age.AgeOfWood;
 import FlowerTeenager.BetterThanArguing.age.NewAge;
-import FlowerTeenager.BetterThanArguing.network.GuiHandler;
 import FlowerTeenager.BetterThanArguing.proxy.CommonProxy;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
@@ -29,7 +28,6 @@ public class BetterThanArguingMod {
 	
 	@SidedProxy(clientSide="FlowerTeenager.BetterThanArguing.proxy.ClientProxy", serverSide="FlowerTeenager.BetterThanArguing.proxy.CommonProxy")
 	public static CommonProxy proxy;
-	public static GuiHandler guiHandler;
 	
 	@EventHandler
 	public void PreInit (FMLPreInitializationEvent event)
@@ -87,7 +85,7 @@ public class BetterThanArguingMod {
 	@EventHandler
 	public void Init (FMLInitializationEvent event)
 	{
-		NetworkRegistry.instance().registerGuiHandler(instance, guiHandler);
+		NetworkRegistry.instance().registerGuiHandler(instance, proxy);
 		if(AgeOfVanilla.AgeEnabled)
 		{
 			AgeOfVanilla.Init();

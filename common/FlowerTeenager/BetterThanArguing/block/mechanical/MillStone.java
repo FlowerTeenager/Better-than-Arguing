@@ -58,7 +58,6 @@ public class MillStone extends BlockContainer {
             if (tileEntity == null || player.isSneaking()) {
                     return false;
             }
-    //code to open gui explained later
     player.openGui(BetterThanArguingMod.instance, 0, world, x, y, z);
             return true;
     }
