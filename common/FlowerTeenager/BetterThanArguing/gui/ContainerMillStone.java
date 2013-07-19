@@ -11,8 +11,8 @@ public class ContainerMillStone extends Container {
 
 	protected TileMillStone tileEntity;
 
-    public ContainerMillStone (InventoryPlayer inventoryPlayer, TileMillStone te){
-            tileEntity = te;
+    public ContainerMillStone (InventoryPlayer inventoryPlayer, TileMillStone tile){
+            tileEntity = tile;
 
             //the Slot constructor takes the IInventory and the slot number in that it binds to
             //and the x-y coordinates it resides on-screen
@@ -79,6 +79,4 @@ public class ContainerMillStone extends Container {
             }
             return stack;
     }
-
-
 }
