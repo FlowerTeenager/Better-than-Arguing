@@ -4,12 +4,15 @@ import java.util.logging.Level;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.oredict.OreDictionary;
 import FlowerTeenager.BetterThanArguing.age.AgeOfWood;
 import FlowerTeenager.BetterThanArguing.block.mechanical.MillStone;
 import FlowerTeenager.BetterThanArguing.item.mechanical.Gear;
+import FlowerTeenager.BetterThanArguing.tile.TileMillStone;
 import FlowerTeenager.BetterThanArguing.utilites.CraftingUtilities;
 import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Tier1 {
@@ -36,8 +39,9 @@ public class Tier1 {
 		AddNames();
 		RegisterDictionary();
 		InitRecipes();
+		RegisterTileEntities();
 	}
-	
+
 	public static void AddNames()
 	{
 		LanguageRegistry.addName(gear, "Gear");
@@ -54,6 +58,11 @@ public class Tier1 {
 	{
 		CraftingUtilities.AddRecipe(new ItemStack(gear, 2), " S ", "SPS", " S ", Character.valueOf('S'), "stickWood", Character.valueOf('P'), "plankWood");
 		CraftingUtilities.AddRecipe(new ItemStack(millStone), "SSS", "SSS", "SGS", Character.valueOf('S'), Block.stone, Character.valueOf('G'), "itemGear");
+	}
+	
+	public static void RegisterTileEntities()
+	{
+		GameRegistry.registerTileEntity(TileMillStone.class, "Mill Stone");
 	}
 
 }
