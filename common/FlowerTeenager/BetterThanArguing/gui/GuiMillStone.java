@@ -17,7 +17,10 @@ public class GuiMillStone extends GuiContainer {
 
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
-		// TODO Auto-generated method stub
-		
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+	    this.mc.renderEngine.func_110577_a(new ResourceLocation("betterthanarguing:textures/gui/mill_stone.png"));
+	    int x = (width - xSize) / 2;
+	    int y = (height - ySize) / 2;
+	    this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
 	}
 }
