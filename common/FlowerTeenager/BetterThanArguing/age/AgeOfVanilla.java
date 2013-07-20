@@ -11,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.oredict.OreDictionary;
-import FlowerTeenager.BetterThanArguing.BetterThanArguingMod;
 import FlowerTeenager.BetterThanArguing.block.agriculture.BlockHemp;
 import FlowerTeenager.BetterThanArguing.block.decoration.BlockWicker;
 import FlowerTeenager.BetterThanArguing.block.decoration.PackedEarth;
@@ -32,6 +31,7 @@ import FlowerTeenager.BetterThanArguing.item.material.Dung;
 import FlowerTeenager.BetterThanArguing.item.material.IngotDiamond;
 import FlowerTeenager.BetterThanArguing.item.material.LeatherCut;
 import FlowerTeenager.BetterThanArguing.item.material.Nitre;
+import FlowerTeenager.BetterThanArguing.item.material.NuggetIron;
 import FlowerTeenager.BetterThanArguing.item.utility.Grate;
 import FlowerTeenager.BetterThanArguing.item.utility.Wicker;
 import FlowerTeenager.BetterThanArguing.item.weapon.ArrowRotted;
@@ -56,6 +56,7 @@ public class AgeOfVanilla {
 	public static IngotDiamond ingotDiamond;
 	public static Nitre nitre;
 	public static LeatherCut cutLeather;
+	public static NuggetIron nuggetIron;
 	
 	//Agriculture
 	public static SeedHemp hempSeed;
@@ -99,6 +100,7 @@ public class AgeOfVanilla {
 		hempSeed = new SeedHemp(hempSeed.ID);
 		hempItem = new Hemp(hempItem.ID);
 		hempBlock = new BlockHemp(hempBlock.ID);
+		nuggetIron = new NuggetIron(nuggetIron.ID);
 	}
 	
 	public static void Init() {
@@ -117,6 +119,7 @@ public class AgeOfVanilla {
 		 LanguageRegistry.addName(wolfchopCooked, "Cooked Wolfchop");
 		 LanguageRegistry.addName(hempSeed, "Hemp Seeds");
 		 LanguageRegistry.addName(hempItem, "Hemp");
+		 LanguageRegistry.addName(nuggetIron, "Iron Nugget");
 	}
 	
 	public static void RegisterDictionary()
@@ -125,12 +128,15 @@ public class AgeOfVanilla {
 		OreDictionary.registerOre("gemDiamond", Item.diamond);
 		OreDictionary.registerOre("ingotIron", Item.ingotIron);
 		OreDictionary.registerOre("ingotGold", Item.ingotGold);
+		OreDictionary.registerOre("nuggetGold", Item.goldNugget);
+		OreDictionary.registerOre("crystalQuartz", Item.netherQuartz);
 		
 		OreDictionary.registerOre("ingotDiamond", ingotDiamond);
 		OreDictionary.registerOre("seedHemp", hempSeed);
 		OreDictionary.registerOre("itemSeed", hempSeed);
 		OreDictionary.registerOre("itemHempSeed", hempSeed);
 		OreDictionary.registerOre("cropHemp", hempItem);
+		OreDictionary.registerOre("nuggetIron", nuggetIron);
 	}
 	
 	public static void InitRecipes() {
@@ -174,6 +180,26 @@ public class AgeOfVanilla {
 		//Smelt that meat!
 		GameRegistry.addSmelting(muttonRaw.itemID, new ItemStack(muttonCooked), 5);
 		GameRegistry.addSmelting(wolfchopRaw.itemID, new ItemStack(wolfchopCooked), 5);
+		
+		//Metal Ore Balancing
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.ingotGold));
+		CraftingUtilities.AddRecipe(new ItemStack(Item.ingotGold), "GGG", "GGG", "GGG", Character.valueOf('G'), "nuggetGold");
+		CraftingUtilities.AddShapelessRecipe(new ItemStack(Item.ingotGold, 9), Block.blockGold);
+		GameRegistry.addSmelting(Block.oreGold.blockID, new ItemStack(Item.goldNugget), 5);
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.pocketSundial));
+		CraftingUtilities.AddRecipe(new ItemStack(Item.pocketSundial), " G ", "GQG", " G ", Character.valueOf('G'), "nuggetGold", Character.valueOf('Q'), "crystalQuartz");
+		CraftingUtilities.RemoveRecipe(new ItemStack (Item.ingotIron));
+		CraftingUtilities.AddRecipe(new ItemStack(Item.ingotIron), "III", "III", "III", Character.valueOf('I'), "nuggetIron");
+		CraftingUtilities.AddShapelessRecipe(new ItemStack(Item.ingotIron, 9), Block.blockIron);
+		GameRegistry.addSmelting(Block.oreIron.blockID, new ItemStack(nuggetIron), 5);
+		CraftingUtilities.RemoveRecipe(new ItemStack(Item.flintAndSteel));
+		CraftingUtilities.AddShapelessRecipe(new ItemStack(Item.flintAndSteel), "nuggetIron", Item.flint);
+		CraftingUtilities.RemoveRecipe(new ItemStack(Item.compass));
+		CraftingUtilities.AddRecipe(new ItemStack(Item.compass), " I ", "IRI", " I ", Character.valueOf('I'), "nuggetIron", Character.valueOf('R'), Item.redstone);
+		CraftingUtilities.RemoveRecipe(new ItemStack(Item.bucketEmpty));
+		CraftingUtilities.AddRecipe(new ItemStack(Item.bucketEmpty), "I I", "I I", "III", Character.valueOf('I'), "nuggetIron");
+		CraftingUtilities.RemoveRecipe(new ItemStack(Item.fishingRod));
+		CraftingUtilities.AddRecipe(new ItemStack(Item.fishingRod), "  s", " Ss", "S I", Character.valueOf('s'), Item.silk, Character.valueOf('S'), Item.stick, Character.valueOf('I'), "nuggetIron");
 	}
 	
 	@ForgeSubscribe
