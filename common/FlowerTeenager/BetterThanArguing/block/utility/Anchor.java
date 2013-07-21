@@ -1,4 +1,4 @@
-package FlowerTeenager.BetterThanArguing.block.mechanical;
+package FlowerTeenager.BetterThanArguing.block.utility;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

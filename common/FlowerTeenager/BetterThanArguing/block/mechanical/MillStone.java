@@ -52,13 +52,12 @@ public class MillStone extends BlockContainer {
         this.iconBottom = par1IconRegister.registerIcon(this.func_111023_E() + "_bottom");
     }
 	@Override
-    public boolean onBlockActivated(World world, int x, int y, int z,
-                    EntityPlayer player, int idk, float what, float these, float are) {
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int idk, float what, float these, float are) {
             TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
             if (tileEntity == null || player.isSneaking()) {
                     return false;
             }
-    player.openGui(BetterThanArguingMod.instance, 0, world, x, y, z);
+            player.openGui(BetterThanArguingMod.instance, 0, world, x, y, z);
             return true;
     }
 
