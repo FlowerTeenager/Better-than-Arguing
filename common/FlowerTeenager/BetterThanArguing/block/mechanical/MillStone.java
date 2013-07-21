@@ -15,12 +15,13 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import FlowerTeenager.BetterThanArguing.BetterThanArguingMod;
+import FlowerTeenager.BetterThanArguing.api.power.IMechanicalPowerReciever;
 import FlowerTeenager.BetterThanArguing.tile.TileMillStone;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class MillStone extends BlockContainer {
+public class MillStone extends BlockContainer implements IMechanicalPowerReciever {
 
 	public static int ID;
 	@SideOnly(Side.CLIENT)
