@@ -7,6 +7,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import FlowerTeenager.BetterThanArguing.api.recipes.MillStoneRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CraftingUtilities {
@@ -37,5 +38,10 @@ public class CraftingUtilities {
 	public static void AddShapelessRecipe(ItemStack item, Object... parts)
 	{
 		CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(item, parts));
+	}
+	
+	public static void AddMillStoneRecipe(int energy, ItemStack input, ItemStack... output)
+	{
+		MillStoneRecipe.addRecipe(energy, input, output);
 	}
 }

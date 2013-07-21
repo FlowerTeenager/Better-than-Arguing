@@ -3,8 +3,8 @@ package FlowerTeenager.BetterThanArguing.age.wood;
 import java.util.logging.Level;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.oredict.OreDictionary;
 import FlowerTeenager.BetterThanArguing.age.AgeOfWood;
 import FlowerTeenager.BetterThanArguing.block.mechanical.MillStone;
@@ -58,6 +58,11 @@ public class Tier1 {
 	{
 		CraftingUtilities.AddRecipe(new ItemStack(gear, 2), " S ", "SPS", " S ", Character.valueOf('S'), "stickWood", Character.valueOf('P'), "plankWood");
 		CraftingUtilities.AddRecipe(new ItemStack(millStone), "SSS", "SSS", "SGS", Character.valueOf('S'), Block.stone, Character.valueOf('G'), "itemGear");
+		CraftingUtilities.AddMillStoneRecipe(10, new ItemStack(Item.reed), new ItemStack(Item.sugar));
+		CraftingUtilities.AddMillStoneRecipe(10, new ItemStack(Item.bone), new ItemStack(Item.dyePowder, 3, 15));
+		CraftingUtilities.AddMillStoneRecipe(10, new ItemStack(Item.skull), new ItemStack(Item.dyePowder, 6, 15));
+		CraftingUtilities.AddMillStoneRecipe(10, new ItemStack(Block.plantYellow), new ItemStack(Item.dyePowder, 2, 11));
+		CraftingUtilities.AddMillStoneRecipe(10, new ItemStack(Block.plantRed), new ItemStack(Item.dyePowder, 2, 1));
 	}
 	
 	public static void RegisterTileEntities()
