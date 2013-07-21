@@ -13,6 +13,8 @@ public class GuiMillStone extends GuiContainer {
 
 	public GuiMillStone (InventoryPlayer inventoryPlayer, TileMillStone tileEntity) {
 		super(new ContainerMillStone(inventoryPlayer, tileEntity));
+		xSize = 175;
+		ySize = 185;
 	}
 	
 	@Override
