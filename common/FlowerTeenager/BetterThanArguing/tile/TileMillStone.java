@@ -12,7 +12,7 @@ public class TileMillStone extends TileEntity implements IInventory {
 	private ItemStack[] inv;
 
     public TileMillStone(){
-            inv = new ItemStack[9];
+            inv = new ItemStack[3];
     }
     
     @Override
