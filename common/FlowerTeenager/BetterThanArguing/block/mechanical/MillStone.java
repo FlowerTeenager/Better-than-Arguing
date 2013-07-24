@@ -24,6 +24,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class MillStone extends BlockContainer {
 
 	public static int ID;
+	public TileMillStone tile;
 	@SideOnly(Side.CLIENT)
     private Icon iconTop;
     @SideOnly(Side.CLIENT)

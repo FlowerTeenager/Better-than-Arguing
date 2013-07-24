@@ -1,18 +1,21 @@
 package FlowerTeenager.BetterThanArguing.block.mechanical;
 
+import java.util.logging.Level;
+
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import FlowerTeenager.BetterThanArguing.api.power.IMechanicalPowerProvider;
 import FlowerTeenager.BetterThanArguing.tile.mechanical.TileHandCrank;
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class HandCrank extends BlockContainer {
 
 	public static int ID;
+	public TileHandCrank tile;
 
 	public HandCrank(int id) {
 		super(id, Material.rock);
@@ -38,6 +41,18 @@ public class HandCrank extends BlockContainer {
     
     public boolean renderAsNormalBlock() {
             return false;
+    }
+    
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float par7, float par8, float par9) {
+    	if (player.isSneaking()) {
+    		return false;
+    	}
+    	else
+    	{
+    		FMLLog.log(Level.INFO, "You right clicked on the Hand Crank at " + x + " " + y + " " + z + "!");
+    	}
+    	return false;
     }
 
 }
