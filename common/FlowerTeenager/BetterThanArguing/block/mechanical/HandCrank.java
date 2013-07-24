@@ -50,7 +50,7 @@ public class HandCrank extends BlockContainer {
     	}
     	else
     	{
-    		FMLLog.log(Level.INFO, "You right clicked on the Hand Crank at " + x + " " + y + " " + z + "!");
+    		
     	}
     	return false;
     }
