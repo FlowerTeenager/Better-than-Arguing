@@ -16,7 +16,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import FlowerTeenager.BetterThanArguing.BetterThanArguingMod;
 import FlowerTeenager.BetterThanArguing.api.power.IMechanicalPowerReciever;
-import FlowerTeenager.BetterThanArguing.tile.TileMillStone;
+import FlowerTeenager.BetterThanArguing.tile.mechanical.TileMillStone;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -32,9 +32,9 @@ public class MillStone extends BlockContainer implements IMechanicalPowerRecieve
     private Icon iconSide;
 
 	public MillStone(int id) {
-		super(id, Material.piston);
+		super(id, Material.rock);
         setCreativeTab(CreativeTabs.tabRedstone);
-		setUnlocalizedName("hempBlock");
+		setUnlocalizedName("millStone");
 		func_111022_d("betterthanarguing:mill_stone");
 		GameRegistry.registerBlock(this, "Mill Stone");
 	}

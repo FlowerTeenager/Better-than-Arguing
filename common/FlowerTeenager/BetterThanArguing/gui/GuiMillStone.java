@@ -7,7 +7,7 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import FlowerTeenager.BetterThanArguing.tile.TileMillStone;
+import FlowerTeenager.BetterThanArguing.tile.mechanical.TileMillStone;
 
 public class GuiMillStone extends GuiContainer {
 

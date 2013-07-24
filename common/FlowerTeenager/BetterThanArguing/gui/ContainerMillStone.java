@@ -5,7 +5,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import FlowerTeenager.BetterThanArguing.tile.TileMillStone;
+import FlowerTeenager.BetterThanArguing.tile.mechanical.TileMillStone;
 
 public class ContainerMillStone extends Container {
 

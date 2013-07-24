@@ -9,7 +9,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import FlowerTeenager.BetterThanArguing.age.AgeOfWood;
 import FlowerTeenager.BetterThanArguing.block.mechanical.MillStone;
 import FlowerTeenager.BetterThanArguing.item.mechanical.Gear;
-import FlowerTeenager.BetterThanArguing.tile.TileMillStone;
+import FlowerTeenager.BetterThanArguing.tile.mechanical.TileMillStone;
 import FlowerTeenager.BetterThanArguing.utilites.CraftingUtilities;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;

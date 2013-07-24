@@ -4,7 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import FlowerTeenager.BetterThanArguing.gui.GuiMillStone;
-import FlowerTeenager.BetterThanArguing.tile.TileMillStone;
+import FlowerTeenager.BetterThanArguing.tile.mechanical.TileMillStone;
 
 public class ClientProxy extends CommonProxy {
 	
