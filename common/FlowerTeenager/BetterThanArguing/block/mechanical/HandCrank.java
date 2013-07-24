@@ -18,7 +18,6 @@ public class HandCrank extends BlockContainer implements IMechanicalPowerProvide
 		super(id, Material.rock);
         setCreativeTab(CreativeTabs.tabRedstone);
 		setUnlocalizedName("handCrank");
-		func_111022_d("betterthanarguing:hand_crank");
 		GameRegistry.registerBlock(this, "Hand Crank");
 	}
 
@@ -39,10 +38,6 @@ public class HandCrank extends BlockContainer implements IMechanicalPowerProvide
     
     public boolean renderAsNormalBlock() {
             return false;
-    }
-    
-    public void registerIcons(IconRegister icon) {
-            this.blockIcon = icon.registerIcon("BetterThanArguing:HandCrank");
     }
 
 }

@@ -2,15 +2,18 @@ package FlowerTeenager.BetterThanArguing.render;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.OpenGlHelper;
+import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
+import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import FlowerTeenager.BetterThanArguing.model.ModelHandCrank;
 
 public class HandCrankRenderer extends TileEntitySpecialRenderer {
@@ -36,7 +39,7 @@ public class HandCrankRenderer extends TileEntitySpecialRenderer {
             //This is setting the initial location.
             GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
             //Set the texture
-            func_110628_a(new ResourceLocation("betterthanarguing:/textures/models/hand_crank.png"));
+            func_110628_a(new ResourceLocation("betterthanarguing:/textures/blocks/hand_crank.png"));
             //This rotation part is very important! Without it, your model will render upside-down! And for some reason you DO need PushMatrix again!                       
             GL11.glPushMatrix();
             GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
@@ -58,5 +61,4 @@ public class HandCrankRenderer extends TileEntitySpecialRenderer {
             tess.setColorOpaque_F(brightness, brightness, brightness);
             OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit,  (float) modulousModifier,  divModifier);
     }
-
 }
