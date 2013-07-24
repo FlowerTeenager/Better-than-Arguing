@@ -20,7 +20,7 @@ public class ModelHandCrank extends ModelBase
       Base.setRotationPoint(-8F, 20F, -8F);
       Base.setTextureSize(64, 32);
       Base.mirror = true;
-      setRotation(Base, 0F, 0F, -0.0174533F);
+      setRotation(Base, 0F, 0F, 0F);
       Shaft = new ModelRenderer(this, 0, 0);
       Shaft.addBox(0F, 0F, 0F, 2, 12, 2);
       Shaft.setRotationPoint(-1F, 9F, -1F);
