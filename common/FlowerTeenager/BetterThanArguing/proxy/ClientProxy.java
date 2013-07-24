@@ -4,13 +4,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import FlowerTeenager.BetterThanArguing.gui.GuiMillStone;
+import FlowerTeenager.BetterThanArguing.render.HandCrankRenderer;
+import FlowerTeenager.BetterThanArguing.tile.mechanical.TileHandCrank;
 import FlowerTeenager.BetterThanArguing.tile.mechanical.TileMillStone;
+import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void registerRenderers() {
-		
+		ClientRegistry.bindTileEntitySpecialRenderer(TileHandCrank.class, new HandCrankRenderer());
 	}
 	
 	@Override

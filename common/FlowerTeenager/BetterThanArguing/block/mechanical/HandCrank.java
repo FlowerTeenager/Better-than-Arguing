@@ -12,6 +12,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class HandCrank extends BlockContainer implements IMechanicalPowerProvider{
 
+	public static int ID;
+
 	public HandCrank(int id) {
 		super(id, Material.rock);
         setCreativeTab(CreativeTabs.tabRedstone);

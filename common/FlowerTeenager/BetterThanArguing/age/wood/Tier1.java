@@ -6,9 +6,12 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import FlowerTeenager.BetterThanArguing.BetterThanArguingMod;
 import FlowerTeenager.BetterThanArguing.age.AgeOfWood;
+import FlowerTeenager.BetterThanArguing.block.mechanical.HandCrank;
 import FlowerTeenager.BetterThanArguing.block.mechanical.MillStone;
 import FlowerTeenager.BetterThanArguing.item.mechanical.Gear;
+import FlowerTeenager.BetterThanArguing.tile.mechanical.TileHandCrank;
 import FlowerTeenager.BetterThanArguing.tile.mechanical.TileMillStone;
 import FlowerTeenager.BetterThanArguing.utilites.CraftingUtilities;
 import cpw.mods.fml.common.FMLLog;
@@ -26,12 +29,14 @@ public class Tier1 {
 	//Mechanical
 	public static Gear gear;
 	public static MillStone millStone;
+	public static HandCrank handCrank;
 	
 	public static void PreInit()
 	{
 		FMLLog.log(Level.INFO, "Initializing " + Age + " Blocks and Items");
 		gear = new Gear(gear.ID);
 		millStone = new MillStone(millStone.ID);
+		handCrank = new HandCrank(handCrank.ID);
 	}
 	
 	public static void Init()
@@ -46,6 +51,7 @@ public class Tier1 {
 	{
 		LanguageRegistry.addName(gear, "Gear");
 		LanguageRegistry.addName(millStone, "Mill Stone");
+		LanguageRegistry.addName(handCrank, "Hand Crank");
 	}
 	
 	public static void RegisterDictionary()
@@ -63,11 +69,14 @@ public class Tier1 {
 		CraftingUtilities.AddMillStoneRecipe(10, new ItemStack(Item.skull), new ItemStack(Item.dyePowder, 6, 15));
 		CraftingUtilities.AddMillStoneRecipe(10, new ItemStack(Block.plantYellow), new ItemStack(Item.dyePowder, 2, 11));
 		CraftingUtilities.AddMillStoneRecipe(10, new ItemStack(Block.plantRed), new ItemStack(Item.dyePowder, 2, 1));
+		CraftingUtilities.AddRecipe(new ItemStack(handCrank), "  S", " S ", "CGC", Character.valueOf('S'), Item.stick, Character.valueOf('C'), Block.cobblestone, Character.valueOf('G'), "itemGear");
 	}
 	
 	public static void RegisterTileEntities()
 	{
 		GameRegistry.registerTileEntity(TileMillStone.class, "Mill Stone");
+		BetterThanArguingMod.proxy.registerRenderers();
+        GameRegistry.registerTileEntity(TileHandCrank.class, "Hand Crank");
 	}
 
 }
