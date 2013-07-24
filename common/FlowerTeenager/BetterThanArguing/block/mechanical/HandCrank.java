@@ -10,7 +10,7 @@ import FlowerTeenager.BetterThanArguing.api.power.IMechanicalPowerProvider;
 import FlowerTeenager.BetterThanArguing.tile.mechanical.TileHandCrank;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class HandCrank extends BlockContainer implements IMechanicalPowerProvider{
+public class HandCrank extends BlockContainer {
 
 	public static int ID;
 

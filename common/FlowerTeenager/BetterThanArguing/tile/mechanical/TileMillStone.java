@@ -6,8 +6,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import FlowerTeenager.BetterThanArguing.api.power.IMechanicalPowerReciever;
 
-public class TileMillStone extends TileEntity implements IInventory {
+public class TileMillStone extends TileEntity implements IInventory, IMechanicalPowerReciever {
 
 	private ItemStack[] inv;
 

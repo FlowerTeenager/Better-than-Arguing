@@ -21,7 +21,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class MillStone extends BlockContainer implements IMechanicalPowerReciever {
+public class MillStone extends BlockContainer {
 
 	public static int ID;
 	@SideOnly(Side.CLIENT)
