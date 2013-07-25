@@ -121,4 +121,10 @@ public class TileMillStone extends TileEntity implements IInventory, IMechanical
     public boolean isItemValidForSlot(int i, ItemStack itemstack) {
     	return true;
     }
+
+	@Override
+	public void recieveRotation() {
+		// TODO Auto-generated method stub
+		
+	}
 }
