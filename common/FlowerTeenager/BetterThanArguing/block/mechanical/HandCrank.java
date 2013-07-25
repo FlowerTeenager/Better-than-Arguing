@@ -8,14 +8,14 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import FlowerTeenager.BetterThanArguing.api.power.IMechanicalPowerProvider;
 import FlowerTeenager.BetterThanArguing.tile.mechanical.TileHandCrank;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class HandCrank extends BlockContainer {
+public class HandCrank extends BlockContainer implements IMechanicalPowerProvider {
 
 	public static int ID;
-	public TileHandCrank tile;
 
 	public HandCrank(int id) {
 		super(id, Material.rock);
@@ -50,9 +50,14 @@ public class HandCrank extends BlockContainer {
     	}
     	else
     	{
-    		
+    		sendRotation(1, world, x, y, z);
+    		return true;
     	}
-    	return false;
     }
+
+	@Override
+	public void sendRotation(int power, World world, int providerX, int providerY, int providerZ) {
+		FMLLog.log(Level.INFO, "Sending " +  power + " mechanical rotation(s) from " + providerX + "," + providerY + "," + providerZ);
+	}
 
 }

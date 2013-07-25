@@ -5,6 +5,6 @@ import net.minecraftforge.common.ForgeDirection;
 
 public interface IMechanicalPowerProvider {
 	
-	public void sendRotation(int power, World world, int providerX, int providerY, int providerZ, ForgeDirection direction);
+	public void sendRotation(int power, World world, int providerX, int providerY, int providerZ);
 
 }
