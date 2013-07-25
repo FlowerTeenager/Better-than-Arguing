@@ -15,7 +15,13 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class HandCrank extends BlockContainer implements IMechanicalPowerProvider {
 
+	//Block related init fields
 	public static int ID;
+	
+	//Hand Crank information, might make these config options at some point in the future.
+	public final int powerSentPerTick = 1; //How many gear rotations are sent by the Hand Crank each time a rotation is finished.
+	public final int gearSpinTime = 4; //When the Mill Stone is activated how many seconds should it stay in an active position before allowing the player to activate in again. Kinda like a cool down period.
+	public final int exhaustionTimer = 10; //How many activations will it take for the player to feel exhaustion.
 
 	public HandCrank(int id) {
 		super(id, Material.rock);
@@ -50,7 +56,7 @@ public class HandCrank extends BlockContainer implements IMechanicalPowerProvide
     	}
     	else
     	{
-    		sendRotation(1, world, x, y, z);
+    		sendRotation(powerSentPerTick, world, x, y, z);
     		return true;
     	}
     }
