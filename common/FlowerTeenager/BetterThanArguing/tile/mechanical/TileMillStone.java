@@ -1,5 +1,8 @@
 package FlowerTeenager.BetterThanArguing.tile.mechanical;
 
+import java.util.logging.Level;
+
+import cpw.mods.fml.common.FMLLog;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -124,7 +127,6 @@ public class TileMillStone extends TileEntity implements IInventory, IMechanical
 
 	@Override
 	public void recieveRotation() {
-		// TODO Auto-generated method stub
-		
+		FMLLog.log(Level.INFO, "The Mill Stone recieved a rotation!");
 	}
 }
