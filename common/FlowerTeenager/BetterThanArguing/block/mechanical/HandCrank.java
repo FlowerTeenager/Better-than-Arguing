@@ -1,7 +1,5 @@
 package FlowerTeenager.BetterThanArguing.block.mechanical;
 
-import java.util.logging.Level;
-
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -9,12 +7,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import FlowerTeenager.BetterThanArguing.api.power.IMechanicalPowerProvider;
+import FlowerTeenager.BetterThanArguing.api.power.MechanicalPowerHandler;
 import FlowerTeenager.BetterThanArguing.tile.mechanical.TileHandCrank;
-import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class HandCrank extends BlockContainer implements IMechanicalPowerProvider {
 
+	//Reference to other classes
+	MechanicalPowerHandler powerHandler;
+	
 	//Block related init fields
 	public static int ID;
 	
@@ -63,7 +64,7 @@ public class HandCrank extends BlockContainer implements IMechanicalPowerProvide
 
 	@Override
 	public void sendRotation(int power, World world, int providerX, int providerY, int providerZ) {
-		FMLLog.log(Level.INFO, "Sending " +  power + " mechanical rotation(s) from " + providerX + "," + providerY + "," + providerZ);
+		powerHandler.sendRotation(power, world, providerX, providerY, providerZ);
 	}
 
 }
