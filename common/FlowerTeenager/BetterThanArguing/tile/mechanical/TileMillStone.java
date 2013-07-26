@@ -2,16 +2,17 @@ package FlowerTeenager.BetterThanArguing.tile.mechanical;
 
 import java.util.logging.Level;
 
-import cpw.mods.fml.common.FMLLog;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import FlowerTeenager.BetterThanArguing.api.power.IMechanicalPowerReciever;
+import net.minecraftforge.common.ForgeDirection;
+import FlowerTeenager.BetterThanArguing.api.power.block.IMechanical;
+import cpw.mods.fml.common.FMLLog;
 
-public class TileMillStone extends TileEntity implements IInventory, IMechanicalPowerReciever {
+public class TileMillStone extends TileEntity implements IInventory, IMechanical {
 
 	private ItemStack[] inv;
 
@@ -126,7 +127,32 @@ public class TileMillStone extends TileEntity implements IInventory, IMechanical
     }
 
 	@Override
-	public void recieveRotation() {
-		FMLLog.log(Level.INFO, "The Mill Stone recieved a rotation!");
+	public boolean canConnect(ForgeDirection direction) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public float receiveElectricity(ForgeDirection from, boolean doReceive) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getRequest(ForgeDirection direction) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getProvide(ForgeDirection direction) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getRotations() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
