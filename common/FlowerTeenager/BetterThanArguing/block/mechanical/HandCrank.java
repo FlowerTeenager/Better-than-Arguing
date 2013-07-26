@@ -6,16 +6,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import FlowerTeenager.BetterThanArguing.api.power.IMechanicalPowerProvider;
-import FlowerTeenager.BetterThanArguing.api.power.MechanicalPowerHandler;
 import FlowerTeenager.BetterThanArguing.tile.mechanical.TileHandCrank;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class HandCrank extends BlockContainer implements IMechanicalPowerProvider {
+public class HandCrank extends BlockContainer {
 
-	//Reference to other classes
-	MechanicalPowerHandler powerHandler;
-	
 	//Block related init fields
 	public static int ID;
 	
@@ -57,14 +52,7 @@ public class HandCrank extends BlockContainer implements IMechanicalPowerProvide
     	}
     	else
     	{
-    		sendRotation(powerSentPerTick, world, x, y, z);
     		return true;
     	}
     }
-
-	@Override
-	public void sendRotation(int power, World world, int providerX, int providerY, int providerZ) {
-		powerHandler.sendRotation(power, world, providerX, providerY, providerZ);
-	}
-
 }
