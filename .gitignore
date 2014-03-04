@@ -5,6 +5,33 @@
 *.war
 *.ear
 
-build/
-download/
-dist/
+# gradle
+.gradle
+build
+gradle-app.setting
+
+
+# eclipse
+.settings
+.metadata
+.classpath
+.cache
+.project
+bin
+eclipse
+
+# intellij
+out
+*.idea
+*.iml
+*.ipr
+*.iws
+*.log
+*.log.lck
+
+#minecraft
+config
+crash-reports
+saves
+stats
+run
