@@ -22,8 +22,6 @@ object BetterThanArguingMod {
 	  log info "Better than Arguing"
 	  log info "Copyright FlowerTeenager 2013-2014"
 	  log info "http://flowerteenager.github.io"
-	  
-	  val cfg = new Configuration(event getSuggestedConfigurationFile)
   }
 
   @EventHandler
