@@ -1,1 +1,3 @@
 language: scala
+
+env: term=DUMB
