@@ -1,11 +1,11 @@
 package FlowerTeenager.BetterThanArguing
 
-import net.minecraftforge.common.Configuration
 import cpw.mods.fml.common.Mod
 import cpw.mods.fml.common.Mod.EventHandler
 import cpw.mods.fml.common.SidedProxy
 import cpw.mods.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
-import java.util.logging.Logger
+import net.minecraftforge.common.config.Configuration
+import org.apache.logging.log4j.Logger
 
 @Mod(modid = "BetterThanArguing", name = "Better Than Arguing", version = "0")
 object BetterThanArguingMod {
